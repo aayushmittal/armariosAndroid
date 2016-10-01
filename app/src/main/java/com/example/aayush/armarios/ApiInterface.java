@@ -10,5 +10,9 @@ import retrofit2.http.GET;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
 
-public class ApiInterface {
+public abstract class ApiInterface {
+
+    @GET("url")
+    abstract Call<JSONObject> getURLS(@Query("type") String type);
+
 }

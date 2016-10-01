@@ -20,11 +20,9 @@ public class ApiClient {
                     .excludeFieldsWithModifiers(Modifier.TRANSIENT, Modifier.STATIC)
                     .create();*/
             Gson gson=new GsonBuilder().create();
-            Retrofit retrofit = new Retrofit.Builder().baseUrl("http://api.themoviedb.org/3/")
+            Retrofit retrofit = new Retrofit.Builder().baseUrl("http://")
                     .addConverterFactory(GsonConverterFactory.create(gson))
-                    .build();//movie/
-            //builder makes retrofit object in it
-            //telling retrofit to use gson for conversion into object
+                    .build();
 
             mService = retrofit.create(ApiInterface.class);
         }

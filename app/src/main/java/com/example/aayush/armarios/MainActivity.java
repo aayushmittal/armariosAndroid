@@ -6,6 +6,7 @@ import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Base64;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
@@ -13,6 +14,10 @@ import android.widget.Toast;
 
 import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
     ArrayList<String> categories;
@@ -74,7 +79,30 @@ public class MainActivity extends AppCompatActivity {
         String encoded = Base64.encodeToString(byteArray, Base64.DEFAULT);
         //conversion Ended
 
+        Call<String> call = ImgurApiClient.getInterface().sendImage(encoded,"2646f0a0cdd2914");
+        Toast.makeText(MainActivity.this, "Here", Toast.LENGTH_SHORT).show();
+        call.enqueue(new Callback<String>() {
+            @Override
+            public void onResponse(Call<String> call, Response<String> response) {
+                if(response.isSuccessful()) {
+                    Log.i("Responce",response.toString());
+                    Toast.makeText(MainActivity.this, "Here2", Toast.LENGTH_SHORT).show();
 
+                }
+                else{
+                    Log.e("errorRes",response.toString());
+                    Log.e("yo",response.message());
+                    Toast.makeText(MainActivity.this, "No data Retrieved. Please Add data or check you internet Connection", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+
+
+            @Override
+            public void onFailure(Call<String> call, Throwable t) {
+                Toast.makeText(MainActivity.this, "Please check your internet connection", Toast.LENGTH_SHORT).show();
+            }
+        });
 
     }
 }

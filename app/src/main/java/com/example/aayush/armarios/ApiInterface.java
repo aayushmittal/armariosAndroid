@@ -6,13 +6,19 @@ package com.example.aayush.armarios;
 
 
 import retrofit2.Call;
+import retrofit2.http.Body;
 import retrofit2.http.GET;
+import retrofit2.http.Header;
+import retrofit2.http.POST;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
 
-public abstract class ApiInterface {
+public interface ApiInterface {
 
     @GET("url")
-    abstract Call<JSONObject> getURLS(@Query("type") String type);
+    Call<JSONObject> getURLS(@Query("type") String type);
+
+    @POST("image")
+    Call<String> sendImage(@Body String string, @Header("Authorization") String s);
 
 }

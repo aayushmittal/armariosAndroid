@@ -20,7 +20,7 @@ public class ApiClient {
                     .excludeFieldsWithModifiers(Modifier.TRANSIENT, Modifier.STATIC)
                     .create();*/
             Gson gson=new GsonBuilder().create();
-            Retrofit retrofit = new Retrofit.Builder().baseUrl("http://")
+            Retrofit retrofit = new Retrofit.Builder().baseUrl("http://www.abc.com")
                     .addConverterFactory(GsonConverterFactory.create(gson))
                     .build();
 

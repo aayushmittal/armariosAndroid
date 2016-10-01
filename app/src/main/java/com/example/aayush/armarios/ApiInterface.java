@@ -19,6 +19,6 @@ public interface ApiInterface {
     Call<JSONObject> getURLS(@Query("type") String type);
 
     @POST("image")
-    Call<String> sendImage(@Body String string, @Header("Authorization") String s);
+    Call<String> sendImage(@Body String string, @Header("Authorization") String  s);
 
 }

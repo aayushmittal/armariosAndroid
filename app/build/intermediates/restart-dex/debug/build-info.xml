@@ -4,48 +4,34 @@
     api-level="19"
     density="xhdpi"
     format="7"
-    timestamp="33271567732915"
+    timestamp="36533465477626"
     token="1073097640285256176"
     verifier="COMPATIBLE" >
 
     <task
         name="javac"
-        duration="116" />
+        duration="531" />
     <task
         name="instant-run-dex"
-        duration="552" />
+        duration="1020" />
     <task
         name="instant-run-transform"
-        duration="26" />
+        duration="33" />
     <task
         name="verifier"
-        duration="1" />
+        duration="5" />
 
     <artifact
         location="/Users/aayush/AndroidStudioProjects/Armarios/app/build/intermediates/reload-dex/debug/classes.dex"
         type="RELOAD_DEX" />
 
-    <build timestamp="33041684956734" >
+    <build timestamp="35808832547855" >
         <artifact
             location="/Users/aayush/AndroidStudioProjects/Armarios/app/build/outputs/apk/app-debug.apk"
             type="MAIN" />
     </build>
     <build
-        timestamp="33145110054700"
-        verifier="COMPATIBLE" >
-        <artifact
-            location="/Users/aayush/AndroidStudioProjects/Armarios/app/build/intermediates/builds/debug/33145110054700/classes.dex"
-            type="RELOAD_DEX" />
-    </build>
-    <build
-        timestamp="33191811085204"
-        verifier="COMPATIBLE" >
-        <artifact
-            location="/Users/aayush/AndroidStudioProjects/Armarios/app/build/intermediates/builds/debug/33191811085204/classes.dex"
-            type="RELOAD_DEX" />
-    </build>
-    <build
-        timestamp="33271567732915"
+        timestamp="36533465477626"
         verifier="COMPATIBLE" >
         <artifact
             location="/Users/aayush/AndroidStudioProjects/Armarios/app/build/intermediates/reload-dex/debug/classes.dex"

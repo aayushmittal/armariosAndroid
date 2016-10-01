@@ -75,11 +75,11 @@ public class MainActivity extends AppCompatActivity {
         Bitmap imageBitmap = (Bitmap) extras.get("data");
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         imageBitmap.compress(Bitmap.CompressFormat.PNG, 100, byteArrayOutputStream);
-        byte[] byteArray = byteArrayOutputStream .toByteArray();
-        String encoded = Base64.encodeToString(byteArray, Base64.DEFAULT);
+        byte[] byteArray = byteArrayOutputStream.toByteArray();
+        String encoded = Base64.encode(byteArray, Base64.DEFAULT).toString();
         //conversion Ended
 
-        Call<String> call = ImgurApiClient.getInterface().sendImage(encoded,"2646f0a0cdd2914");
+        Call<String> call = ImgurApiClient.getInterface().sendImage(encoded,"Client-ID " + "2646f0a0cdd2914");
         Toast.makeText(MainActivity.this, "Here", Toast.LENGTH_SHORT).show();
         call.enqueue(new Callback<String>() {
             @Override

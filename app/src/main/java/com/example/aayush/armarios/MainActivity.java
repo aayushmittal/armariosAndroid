@@ -91,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else{
                     Log.e("errorRes",response.toString());
-                    Log.e("yo",response.message());
+                    Log.e("yo",response.message() + response.code());
                     Toast.makeText(MainActivity.this, "No data Retrieved. Please Add data or check you internet Connection", Toast.LENGTH_SHORT).show();
                 }
             }
